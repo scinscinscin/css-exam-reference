@@ -1,0 +1,21 @@
+.banner {
+  background-color: var(--neutral-light);
+  padding: 20px;
+  padding-bottom: 15px;
+  height: 120px;
+  max-height: 120px;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  img {
+    margin-left: -50%;
+    overflow: none;
+
+    width: 100px;
+    height: auto;
+    object-fit: cover;
+  }
+}

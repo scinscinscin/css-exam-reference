@@ -1,0 +1,334 @@
+.hero {
+  min-height: calc(100vh - 90px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .center {
+    max-width: 713px;
+
+    .title {
+      font-family: Nunito, sans-serif;
+      font-weight: 800;
+      color: var(--primary);
+      font-size: 66px;
+      text-align: center;
+      line-height: 66px;
+    }
+
+    .subtitle {
+      margin-top: 20px;
+
+      text-align: center;
+      font-family: Nunito, sans-serif;
+      font-weight: 400;
+      color: var(--neutral-base);
+    }
+
+    .buttons {
+      margin-top: 40px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    @media screen and (max-width: 700px) {
+      .title {
+        font-size: 40px;
+        line-height: 40px;
+      }
+      .subtitle {
+        font-size: 18px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    .center {
+      .title {
+        font-size: 32px;
+        line-height: 32px;
+      }
+      .subtitle {
+        font-size: 16px;
+      }
+      padding: 0px 10px;
+    }
+  }
+}
+
+.sectionHeading {
+  text-align: center;
+  font-family: Nunito, sans-serif;
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 46px;
+}
+.sectionSubheading {
+  text-align: center;
+  font-family: Nunito, sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.tracks {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 70px;
+
+  .tracks_list {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    --gap: 60px;
+    --cols: 3;
+    gap: var(--gap);
+    flex-wrap: wrap;
+
+    .track {
+      max-width: calc(calc(100% - calc(calc(var(--cols) - 1) * var(--gap))) / var(--cols));
+
+      .image {
+        width: 100%;
+        aspect-ratio: 16/9;
+        height: auto;
+        object-fit: cover;
+        border-radius: 32px;
+      }
+
+      .name {
+        margin-top: 20px;
+        margin-bottom: 10px;
+        text-align: center;
+        font-family: Nunito, sans-serif;
+        font-weight: bold;
+        font-size: 26px;
+      }
+
+      .description {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;
+        text-align: center;
+        font-family: Nunito, sans-serif;
+        font-size: 16px;
+        color: var(--neutral-gray);
+      }
+
+      .rail {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      --cols: 2;
+      --gap: 40px;
+    }
+
+    @media screen and (max-width: 700px) {
+      --cols: 1;
+      --gap: 40px;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    padding: 100px 30px;
+  }
+}
+
+.courses {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 70px;
+
+  .sectionSubheading {
+    padding: 10px 0px;
+    padding-bottom: 30px;
+    max-width: 520px;
+    margin: 0px auto;
+  }
+
+  .rail {
+    justify-content: center;
+    display: flex;
+    gap: 15px;
+  }
+
+  @media screen and (max-width: 700px) {
+    .rail {
+      flex-wrap: wrap;
+      gap: 10px;
+      > * {
+        width: fit-content;
+      }
+    }
+  }
+
+  .courses_list {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    --gap: 40px;
+    --cols: 3;
+    gap: var(--gap);
+
+    .course {
+      max-width: calc(calc(100% - calc(calc(var(--cols) - 1) * var(--gap))) / var(--cols));
+      background-color: var(--neutral-light-gray);
+      border-radius: 20px;
+
+      .image {
+        width: 100%;
+        aspect-ratio: 16/9;
+        height: auto;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+
+      .bottom {
+        padding: 20px;
+        font-family: Nunito, sans-serif;
+
+        .code {
+          font-size: 22px;
+          color: var(--primary);
+        }
+
+        .name {
+          font-size: 18px;
+        }
+
+        .rail {
+          margin-top: 20px;
+          display: flex;
+          justify-content: flex-end;
+        }
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      --cols: 2;
+      --gap: 40px;
+    }
+
+    @media screen and (max-width: 700px) {
+      --cols: 1;
+      --gap: 40px;
+    }
+  }
+}
+
+.latest_posts {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 100px 70px;
+
+  .posts {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    --gap: 30px;
+    --cols: 4;
+    gap: var(--gap);
+
+    .post {
+      max-width: calc(calc(100% - calc(calc(var(--cols) - 1) * var(--gap))) / var(--cols));
+      position: relative;
+
+      .image {
+        transform: scale(1);
+        transition: 150ms ease-in-out all;
+
+        aspect-ratio: 1/1;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+      }
+
+      .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgb(92, 92, 92);
+        background: linear-gradient(180deg, rgba(92, 92, 92, 0.3043418050814075) 48%, rgba(0, 0, 0, 1) 100%);
+        color: white;
+        padding: 15px;
+        font-family: Nunito, sans-serif;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+
+        .title {
+          font-weight: normal;
+          font-size: 22px;
+        }
+
+        .days_ago {
+          font-size: 16px;
+        }
+      }
+
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .post:hover {
+      .image {
+        transition: 150ms ease-in-out all;
+        transform: scale(1.1);
+      }
+    }
+
+    @media screen and (max-width: 1000px) {
+      --cols: 2;
+      --gap: 30px;
+    }
+
+    @media screen and (max-width: 700px) {
+      --cols: 1;
+      --gap: 30px;
+    }
+  }
+
+  .rail {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .marker {
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      background-color: var(--neutral-gray);
+      cursor: pointer;
+    }
+
+    .selected {
+      background-color: var(--primary);
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .tracks,
+  .courses,
+  .latest_posts {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .sectionHeading {
+    font-size: 32px;
+  }
+
+  .sectionSubheading {
+    font-size: 18px;
+  }
+}
